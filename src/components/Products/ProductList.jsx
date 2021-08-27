@@ -1,6 +1,7 @@
 import { Component } from "react";
-// import { Container, Navbar, Nav } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import axios from "axios";
+import SingleProduct from "./SingleProduct";
 
 class ProductList extends Component {
   state = {
@@ -14,6 +15,7 @@ class ProductList extends Component {
     );
 
     const products = response.data;
+    console.log(products);
     this.setState({ products, loading: false });
   };
 
@@ -22,7 +24,16 @@ class ProductList extends Component {
   };
 
   render() {
-    return <div className="product-list"></div>;
+    return (
+      <Row className="product-list mt-5">
+        {!this.state.loading &&
+          this.state.products.map((p) => (
+            <Col key={p.id} xs={12} md={4} lg={3} className="mb-4">
+              <SingleProduct product={p} />
+            </Col>
+          ))}
+      </Row>
+    );
   }
 }
 
