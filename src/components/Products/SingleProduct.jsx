@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Card, Button } from "react-bootstrap";
+import { FaShoppingCart } from "react-icons/fa";
 
 class SingleProduct extends Component {
   render() {
@@ -13,7 +14,9 @@ class SingleProduct extends Component {
               <strong>Price:</strong> €{this.props.product.price}
             </span>
           </Card.Text>
-          <Button variant="primary">Add to Cart</Button>
+          <Button variant="primary">
+            Add to <FaShoppingCart />
+          </Button>
         </Card.Body>
       </Card>
     );
