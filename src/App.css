@@ -1,3 +1,13 @@
 .single-product {
   color: black;
 }
+
+.card-title.h5 {
+  font-size: 2rem;
+}
+
+.single-product .badge {
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+}

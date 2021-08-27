@@ -17,6 +17,7 @@ class ProductList extends Component {
     );
 
     const products = response.data;
+    console.log(products);
     this.setState({ products, loading: false });
   };
 
@@ -35,7 +36,7 @@ class ProductList extends Component {
   render() {
     return (
       <>
-        <Row className="mt-5">
+        <Row>
           <Form.Label column="lg" lg={2}>
             Search Products
           </Form.Label>
