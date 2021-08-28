@@ -11,3 +11,8 @@
   right: 10px;
   font-size: 1.5rem;
 }
+
+.single-product img {
+  object-fit: cover;
+  height: 18rem;
+}

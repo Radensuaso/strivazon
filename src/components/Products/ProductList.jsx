@@ -4,7 +4,7 @@ import { fetchProducts } from "../../tools/fetchTools";
 import SingleProduct from "./SingleProduct";
 
 const ProductList = () => {
-  const [products, setProducts] = useState({ data: [], loading: true });
+  const [products, setProducts] = useState({});
   const [query, setQuery] = useState("");
 
   //=================component did update =============
@@ -35,7 +35,7 @@ const ProductList = () => {
         </Col>
       </Row>
       <Row className="product-list mt-5">
-        {!products.loading &&
+        {products.status === 200 &&
           products.data.map((p) => (
             <Col key={p.id} xs={12} md={4} lg={3} className="mb-4">
               <SingleProduct product={p} />

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { postProduct } from "../../tools/fetchTools";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 const FormBackOffice = () => {
@@ -37,7 +38,10 @@ const FormBackOffice = () => {
     <Row className="justify-content-center">
       <Col xs={12} md={8} lg={6} className="border p-5">
         <h2 className="text-center">Add a Product</h2>
-        <form className="form-back-office">
+        <form
+          className="form-back-office"
+          onSubmit={(e) => postProduct(productToPost, e)}
+        >
           <Form.Group controlId="formCategory" className="mt-3">
             <Form.Label>Category</Form.Label>
             <Form.Select
